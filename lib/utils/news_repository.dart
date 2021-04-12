@@ -2,7 +2,6 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:google_login/models/new.dart';
-import 'package:google_login/utils/secrets.dart';
 import 'package:http/http.dart';
 
 class NewsRepository {
@@ -26,7 +25,7 @@ class NewsRepository {
       queryParameters: {
         "country": "mx",
         "category": "sports",
-        "apiKey": apiKey
+        "apiKey": 'b804b077b6074d4f9982e438e31d56d5'
       },
     );
     // TODO: completar request y deserializacion
