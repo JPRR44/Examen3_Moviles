@@ -98,7 +98,7 @@ class MyNewsBloc extends Bloc<MyNewsEvent, MyNewsState> {
               description: element['description'],
               url: element['url'],
               urlToImage: element['urlToImage'],
-              publishedAt: element['publishedAt'].toDate(),
+              publishedAt: DateTime.parse(element["publishedAt"]),
               // content: element['content'],
             ),
           )
