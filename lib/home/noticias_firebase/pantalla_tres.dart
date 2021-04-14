@@ -39,6 +39,7 @@ class _PantallaTresState extends State<PantallaTres> {
                 ),
               );
           } else if (state is SavedNewState) {
+            newsBloc.add(RequestAllNewsEvent());
             autorTc.clear();
             tituloTc.clear();
             descrTc.clear();
