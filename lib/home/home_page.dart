@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_login/bloc/auth_bloc.dart';
+import 'package:google_login/home/formulario/bloc/upload_bloc.dart';
 import 'package:google_login/home/noticias_ext_api/bloc/noticias_ext_bloc_bloc.dart';
 import 'package:google_login/home/noticias_firebase/bloc/my_news_bloc.dart';
 import 'package:google_login/home/noticias_firebase/mis_noticias.dart';
 import 'noticias_ext_api/noticias_deportes.dart';
-import 'package:google_login/home/noticias_firebase/pantalla_tres.dart';
+import 'package:google_login/home/formulario/pantalla_tres.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({Key key}) : super(key: key);
@@ -36,6 +37,9 @@ class _HomePageState extends State<HomePage> {
         ),
         BlocProvider(
           create: (context) => MyNewsBloc()..add(RequestAllNewsEvent()),
+        ),
+        BlocProvider(
+          create: (context) => UploadBloc()..add(InitialEvent()),
         )
       ],
       child: Scaffold(

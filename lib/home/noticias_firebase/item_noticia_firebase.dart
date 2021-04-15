@@ -3,9 +3,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_login/home/formulario/bloc/upload_bloc.dart';
 import 'package:google_login/models/new.dart';
 
-class ItemNoticia extends StatelessWidget {
+class ItemNoticiaFirebase extends StatelessWidget {
   final New noticia;
-  ItemNoticia({Key key, @required this.noticia}) : super(key: key);
+  ItemNoticiaFirebase({Key key, @required this.noticia}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -82,33 +82,6 @@ class ItemNoticia extends StatelessWidget {
                           fontSize: 12,
                         ),
                       ),
-                      Align(
-                        alignment: Alignment.bottomRight,
-                        child: IconButton(
-                          onPressed: () {
-                            print('pressed');
-                            BlocProvider.of<UploadBloc>(context).add(
-                              SaveApiNewsEvent(
-                                noticia: New(
-                                    source: null,
-                                    author:
-                                        noticia.author ?? "Autor no disponible",
-                                    title: noticia.title,
-                                    description: noticia.description ??
-                                        "Descripcion no disponible",
-                                    url: noticia.urlToImage,
-                                    urlToImage: noticia.urlToImage,
-                                    publishedAt: noticia.publishedAt),
-                                // content: element['content'],
-                                // //
-                              ),
-                            );
-                          },
-                          icon: Icon(Icons.add),
-                          padding: EdgeInsets.zero,
-                          constraints: BoxConstraints(),
-                        ),
-                      )
                     ],
                   ),
                 ),

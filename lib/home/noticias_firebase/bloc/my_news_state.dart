@@ -38,3 +38,5 @@ class ErrorMessageState extends MyNewsState {
   @override
   List<Object> get props => [errorMsg];
 }
+
+class SavedApiNewsState extends MyNewsState {}
